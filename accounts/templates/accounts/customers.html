@@ -1,0 +1,63 @@
+{% extends 'accounts/main.html' %}
+
+
+	{% block content %}
+	<br>
+	<div class ="row" >
+		<div class = "col-md-5">
+			<h5> CUSTOMER: </h5>
+			<hr>
+			<div class = " card card-body">
+				<a class =" btn btn-primary btn-sm btn-block" href=" ">create customer
+				</a>
+				<a class = "btn btn-outline-danger btn-sm-btn-block" href="">delete customers
+				</a>
+			</div>
+		</div>
+		<div class ="col-md" >
+		<div class = "card card-body">
+			<h5> contact information</h5>
+			<hr>
+			<p> Email </p>
+			<p> phone </p>
+		</div>
+	</div>
+	<div class ="col-md" >
+		<div class = "card card-body">
+			<h5> Total orders</h5>
+			<hr>
+			<h1 style= "text-align: center;padding :10px" ></h1>
+		</div>
+	</div>
+	</div>
+	<br/>
+	<div class ="row">
+		<div class ="col">
+			<div class ="card card-body">
+				<form method="get">
+					<button class="btn btn-primary " type="submit" >search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div>
+		<br/>
+		<div class ="row">
+		<div class ="col-md">
+			<div class ="card card-body">
+				<table class="table table-sm">
+					<tr>
+						<td> product </td>
+						<td> category </td>
+						<td> date orderded </td>
+						<td>status </td>
+						<td> update </td>
+						<td> remove </td>
+					</tr>
+					
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

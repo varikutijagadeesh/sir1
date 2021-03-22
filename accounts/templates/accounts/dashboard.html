@@ -1,0 +1,78 @@
+{% extends 'accounts/main.html' %}
+
+
+	{% block content %}
+	{% include 'accounts/status.html' %}
+
+	<br>
+	<div class ="row" >
+		<div class = "col-md-5">
+			<h5> CUSTOMER: </h5>
+			<hr>
+			<div class = " card card-body">
+				<a class =" btn btn-primary btn-sm btn-block" href="{% url 'createcustomer2' %}  ">create customer
+				</a>
+				<table class =" table table-sm"> 
+					<tr>
+						<th> CUSTOMERS </th>
+						<th> phone_no </th>
+					</tr>
+					{% for k in cust %}
+					<tr> 
+						<td>{{k.name}}</td>
+						<td>{{k.phone_no}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+
+			</div>
+		</div>
+		<div class ="col-md-7">
+			<h5> LAST 5 ORDERS </h5>
+			<hr>
+			<div class = "card card-body">
+				<a  class =" btn btn-primary btn-sm btn-block" href ="{% url 'createorders1' %} "> create order </a>
+				<table class = "table table-sm">
+					<tr>
+						<th> products </th>
+						<th> date_enter</th>
+						<th> status</th>
+						<th> UPDATE </th>
+						<th> REMOVE </th>
+					</tr>
+					{% for p in ord %}
+					<tr>
+						<td>{{p.products}}</td>
+						<td> {{p.date_enter}}</td>
+						<td> {{p.status}}</td>
+						<td><a class = "btn btn-sm btn-info" href=""> update</a>
+						<td><a class =" btn btn-sm btn-danger" href=""> delete</a>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+    {% endblock %}
+
+
+
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+ <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
